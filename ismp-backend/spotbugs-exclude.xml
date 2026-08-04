@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+  <!-- Add filters for false positives as needed -->
+</FindBugsFilter>
