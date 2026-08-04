@@ -133,6 +133,44 @@
 
 	<build>
 		<plugins>
+			<!-- Checkstyle plugin -->
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-checkstyle-plugin</artifactId>
+  <version>3.4.2</version>
+  <configuration>
+    <configLocation>checkstyle.xml</configLocation>
+    <failOnViolation>false</failOnViolation>
+  </configuration>
+  <executions>
+    <execution>
+      <phase>verify</phase>
+      <goals>
+        <goal>check</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+
+<!-- SpotBugs plugin -->
+<plugin>
+  <groupId>com.github.spotbugs</groupId>
+  <artifactId>spotbugs-maven-plugin</artifactId>
+  <version>4.8.0</version>
+  <configuration>
+    <effort>Max</effort>
+    <threshold>Low</threshold>
+    <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
+  </configuration>
+  <executions>
+    <execution>
+      <phase>verify</phase>
+      <goals>
+        <goal>check</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
